@@ -271,8 +271,8 @@ async function starts() {
 
 	client.on('chat-update', async (mek) => {
 		try {
-                        if (!mek.hasNewMessage) return
-                        mek = JSON.parse(JSON.stringify(mek)).messages[0]
+			if (!mek.hasNewMessage) return
+			mek = JSON.parse(JSON.stringify(mek)).messages[0]
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
 			if (mek.key.fromMe) return
@@ -295,42 +295,42 @@ async function starts() {
 			mess = {
 				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\n_*by Ochoa*_',
 				success: '✔️ Listo ✔️',
-                                levelon: '❬ ✅ ❭ *Level activado*',
+				levelon: '❬ ✅ ❭ *Level activado*',
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
 				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\n_*by Ochoa*_',
 				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\n_*by Ochoa*_',
-                                levelnoton: '❬ ❎ ❭ *Level no esta activado*',
+				levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
 					yt: 'Falló en el link o se produjo un error al momento de descargar el video',
 					unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx',
 					Iv: 'Este no es un link de youtube'
-					},
+				},
 				only: {
 					group: '[❗] Este comando es solo para grupos',
 					ownerG: '[❗] Este comando solo puede ser utilizado por un admins del grupo',
 					ownerB: '[❗] Este comando solo lo usa XavyBot',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador',
-                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by Ochoa*_',
+					pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by Ochoa*_',
 					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\n_*by Ochoa*_',
 					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\n_*by Ochoa*_',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\n_*by Ochoa*_',
 					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
-                                        mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
+					mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
 					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
 					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play no funciona utiliza el comando !play2*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
 					musica2: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play2 no funciona utiliza el comando !play*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
 					daftarB: `「NO ESTAS REGISTRADO MI PANA」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Ochoa`,
 				}
 			}
-    			const apakah = ['Si','No']
-                        const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
+			const apakah = ['Si', 'No']
+			const kapankah = ['Otro día', 'Otra semana', 'Otro mes', 'Otro año']
 			const botNumber = client.user.jid
 			const ownerNumber = ["573146224366@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
-	                const isGroup = from.endsWith('@g.us')
+			const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -345,218 +345,218 @@ async function starts() {
 			const isAntiWa = isGroup ? antiwa.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
-                        const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
+			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
 			const isNsfw = isGroup ? nsfw.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
-                        const isUser = user.includes(sender)
-                        const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
-                        const NomerOwner = '573146224366@s.whatsapp.net'
-                        const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
-                        const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
-			
+			const isUser = user.includes(sender)
+			const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
+			const NomerOwner = '573146224366@s.whatsapp.net'
+			const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
+			const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
+
 			//......................
-			
+
 			const isUrl = (url) => {
-			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+				return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
 			const reply = (teks) => {
-				client.sendMessage(from, teks, text, {quoted:mek})
+				client.sendMessage(from, teks, text, { quoted: mek })
 			}
 			const sendMess = (hehe, teks) => {
 				client.sendMessage(hehe, teks, text)
 			}
 			const mentions = (teks, memberr, id) => {
-				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
+				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, { contextInfo: { "mentionedJid": memberr } }) : client.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": memberr } })
 			}
-           
-//LINKS DE WHATSAPP	
 
-if (budy.includes("https://wa.me/")){
-		if (!isGroup) return
-		if (!isAntiWa) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
-			
-	if (budy.includes("wa.me")){
-		if (!isGroup) return
-		if (!isAntiWa) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
-			
-			
-//FIN DE LINKS DE WHATSAPP	
-			
-			
-//ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES
-			
-if (budy.includes("https://www.facebook.com/")){
-		if (!isGroup) return
-		if (!isAntiFace) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}			
-			
-if (budy.includes("https://m.facebook.com/")){
-		if (!isGroup) return
-		if (!isAntiFace) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
-			
-			
-//FIN ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES			
-			
-//FUNCION ANTILINK
-	     	
-	if (budy.includes("https://discord.com/")){
-		if (!isGroup) return
-		if (!isAntiDiscord) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE DISCORD DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
-			
-	if (budy.includes("https://s.kwai.app/")){
-		if (!isGroup) return
-		if (!isAntiKwai) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE KWAI DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
+			//LINKS DE WHATSAPP	
 
-	if (budy.includes("https://www.instagram.com/")){
-		if (!isGroup) return
-		if (!isAntInsta) return
-	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE INSTAGRAM DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}		
-	
-	if (budy.includes("https://vm.tiktok.com/")){
-		if (!isGroup) return
-		if (!isAntiTik) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE TIK TOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
-	
-       if (budy.includes("://chat.whatsapp.com/")){
-		if (!isGroup) return
-		if (!isAntiLink) return
-		if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted será expulsado del grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}
+			if (budy.includes("https://wa.me/")) {
+				if (!isGroup) return
+				if (!isAntiWa) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
 
-//FIN DE ANTI LINKS 
-		
+			if (budy.includes("wa.me")) {
+				if (!isGroup) return
+				if (!isAntiWa) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
 
-//FUNCION DE LEVEL
-            
-     if (isGroup && isLevelingOn) {
-            const currentLevel = getLevelingLevel(sender)
-            const checkId = getLevelingId(sender)
-            try {
-                if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
-                const amountXp = Math.floor(Math.random() * 10) + 500
-                const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
-                const getLevel = getLevelingLevel(sender)
-                addLevelingXp(sender, amountXp)
-                if (requiredXp <= getLevelingXp(sender)) {
-                    addLevelingLevel(sender, 1)
-                    await reply(`*「 FELICIDADES LEVEL UP 🆙🥳 」*\n\nFelicidades subiste de nivel sigue asi 👏\n\n*NOMBRE*\n${pushname}\n*XP*: ${getLevelingXp(sender)}\n*NIVEL*: ${getLevel} ⟿ ${getLevelingLevel(sender)}\n\n_*Para ver tu XP en tiempo real coloca el comando ${prefix}level*_`)
-                }
-            } catch (err) {
-                console.error(err)
-            }
-        }
 
-//FIN DE FUNCION DE LEVEL
-			
-         		
-                        colors = ['red','white','black','blue','yellow','green']
+			//FIN DE LINKS DE WHATSAPP	
+
+
+			//ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES
+
+			if (budy.includes("https://www.facebook.com/")) {
+				if (!isGroup) return
+				if (!isAntiFace) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			if (budy.includes("https://m.facebook.com/")) {
+				if (!isGroup) return
+				if (!isAntiFace) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+
+			//FIN ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES			
+
+			//FUNCION ANTILINK
+
+			if (budy.includes("https://discord.com/")) {
+				if (!isGroup) return
+				if (!isAntiDiscord) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE DISCORD DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			if (budy.includes("https://s.kwai.app/")) {
+				if (!isGroup) return
+				if (!isAntiKwai) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE KWAI DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			if (budy.includes("https://www.instagram.com/")) {
+				if (!isGroup) return
+				if (!isAntInsta) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE INSTAGRAM DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			if (budy.includes("https://vm.tiktok.com/")) {
+				if (!isGroup) return
+				if (!isAntiTik) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE TIK TOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			if (budy.includes("://chat.whatsapp.com/")) {
+				if (!isGroup) return
+				if (!isAntiLink) return
+				if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+				client.updatePresence(from, Presence.composing)
+				var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+				reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted será expulsado del grupo`)
+				setTimeout(() => {
+					client.groupRemove(from, [kic]).catch((e) => { reply(`*ERR:* ${e}`) })
+				}, 0)
+				setTimeout(() => {
+					client.updatePresence(from, Presence.composing)
+					reply("Adios mi loco")
+				}, 0)
+			}
+
+			//FIN DE ANTI LINKS 
+
+
+			//FUNCION DE LEVEL
+
+			if (isGroup && isLevelingOn) {
+				const currentLevel = getLevelingLevel(sender)
+				const checkId = getLevelingId(sender)
+				try {
+					if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
+					const amountXp = Math.floor(Math.random() * 10) + 500
+					const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
+					const getLevel = getLevelingLevel(sender)
+					addLevelingXp(sender, amountXp)
+					if (requiredXp <= getLevelingXp(sender)) {
+						addLevelingLevel(sender, 1)
+						await reply(`*「 FELICIDADES LEVEL UP 🆙🥳 」*\n\nFelicidades subiste de nivel sigue asi 👏\n\n*NOMBRE*\n${pushname}\n*XP*: ${getLevelingXp(sender)}\n*NIVEL*: ${getLevel} ⟿ ${getLevelingLevel(sender)}\n\n_*Para ver tu XP en tiempo real coloca el comando ${prefix}level*_`)
+					}
+				} catch (err) {
+					console.error(err)
+				}
+			}
+
+			//FIN DE FUNCION DE LEVEL
+
+
+			colors = ['red', 'white', 'black', 'blue', 'yellow', 'green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
@@ -565,50 +565,51 @@ if (budy.includes("https://m.facebook.com/")){
 			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
-         if (isCmd && isBanned) {
-        return console.log(color('[ USUÁRIO BANEADO ] Ignorando Comando', 'blue'), color(moment.tz('America/Guayaquil').format('HH:mm:ss'), 'yellow'), color(`${command}`),'DE:', color(pushname))}
-    	if (!isGroup && isCmd) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]))
-        if (isCmd && isGroup) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]), 'En', color(groupName))
+			if (isCmd && isBanned) {
+				return console.log(color('[ USUÁRIO BANEADO ] Ignorando Comando', 'blue'), color(moment.tz('America/Guayaquil').format('HH:mm:ss'), 'yellow'), color(`${command}`), 'DE:', color(pushname))
+			}
+			if (!isGroup && isCmd) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]))
+			if (isCmd && isGroup) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]), 'En', color(groupName))
 
-/******ENTRADA FIN DE FUNCIONES******/
-			function addMetadata(packname, author) {	
-				if (!packname) packname = 'XavyBot'; if (!author) author = 'Ochoa';	
-				author = author.replace(/[^a-zA-Z0-9]/g, '');	
+			/******ENTRADA FIN DE FUNCIONES******/
+			function addMetadata(packname, author) {
+				if (!packname) packname = 'XavyBot'; if (!author) author = 'Ochoa';
+				author = author.replace(/[^a-zA-Z0-9]/g, '');
 				let name = `${author}_${packname}`
 				if (fs.existsSync(`./src/stickers/${name}.exif`)) return `./src/stickers/${name}.exif`
-				const json = {	
+				const json = {
 					"sticker-pack-name": packname,
 					"sticker-pack-publisher": author,
 				}
-				const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
-				const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
+				const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])
+				const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]
 
-				let len = JSON.stringify(json).length	
-				let last	
+				let len = JSON.stringify(json).length
+				let last
 
-				if (len > 256) {	
-					len = len - 256	
-					bytes.unshift(0x01)	
-				} else {	
-					bytes.unshift(0x00)	
-				}	
+				if (len > 256) {
+					len = len - 256
+					bytes.unshift(0x01)
+				} else {
+					bytes.unshift(0x00)
+				}
 
-				if (len < 16) {	
-					last = len.toString(16)	
-					last = "0" + len	
-				} else {	
-					last = len.toString(16)	
-				}	
+				if (len < 16) {
+					last = len.toString(16)
+					last = "0" + len
+				} else {
+					last = len.toString(16)
+				}
 
-				const buf2 = Buffer.from(last, "hex")	
-				const buf3 = Buffer.from(bytes)	
-				const buf4 = Buffer.from(JSON.stringify(json))	
+				const buf2 = Buffer.from(last, "hex")
+				const buf3 = Buffer.from(bytes)
+				const buf4 = Buffer.from(JSON.stringify(json))
 
-				const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])	
+				const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])
 
-				fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {	
-					return `./src/stickers/${name}.exif`	
-				})	
+				fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {
+					return `./src/stickers/${name}.exif`
+				})
 
 			}
 			switch (command) {
@@ -1696,236 +1697,236 @@ if (budy.includes("https://m.facebook.com/")){
 					break
 				default:
 
-		if (budy.includes(`tatis`)) {
-				  reply(`Es mi amor`)
-				  {
-
-		if (budy.includes(`Tatis`)) {
-				  reply(`Es mi amor`)
-				  {
-
-
-		if (budy.includes(`Todo bien`)) {
-                  reply(`Si amigo todo bien, vite`)
-                  }
-
-		if (budy.includes(`Bot`)) {
-				   reply(`Dime mi amor`)
-				   }
-
-        if (budy.includes(`Buenos dias`)) {
-                  reply(`Buenos Dias trolos de mierda`)
-                  }
-
-		if (budy.includes(`Bot gay`)) {
-                  reply(`Miren a este boludito`)
-                  }
-
-		if (budy.includes(`bot`)) {
-				  reply(`Dime mi amor`)
+					if (budy.includes(`tatis`)) {
+						reply(`Es mi amor`)
 					}
 
-        if (budy.includes(`Gracias`)) {
-                  reply(`De nada UwU`)
-                  }
+					if (budy.includes(`Tatis`)) {
+						reply(`Es mi amor`)
+					}
 
-		if (budy.includes(`Bien gracias y tu?`)) {
-                  reply(`Opa yazmin te extrañe :(`)
-                  }
-					
-		if (budy.includes(`Opa`)) {
-                  reply(`opaaaaa`)
-                  }
-                 
-		if (budy.includes(`Fua`)) {
-                  reply(`el diegote pa`)
-                  }
-	
-	if (budy.startsWith(`Hora del sexito`)) {
-        const none = fs.readFileSync('./mp3/maau1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-        if (budy.startsWith(`Cuentate un chiste`)) {
-        const none = fs.readFileSync('./mp3/dylan2.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Admin party`)) {
-        const none = fs.readFileSync('./mp3/fiesta.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-        if (budy.startsWith(`Fiesta del admin`)) {
-        const none = fs.readFileSync('./mp3/admin.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Viernes`)) {
-        const none = fs.readFileSync('./mp3/viernes.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`:v`)) {
-        const none = fs.readFileSync('./mp3/viejo1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`La toca 7w7`)) {
-        const none = fs.readFileSync('./anishan/anime5.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Quien es tu sempai botsito`)) {
-        const none = fs.readFileSync('./anishan/anime4.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Me gimes 7u7`)) {
-        const none = fs.readFileSync('./anishan/anime3.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Te amo botsito uwu`)) {
-        const none = fs.readFileSync('./anishan/anime2.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Onichan`)) {
-        const none = fs.readFileSync('./anishan/anime1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Pasen sexo`)) {
-        const none = fs.readFileSync('./mp3/fernan.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Paraguayo`)) {
-        const none = fs.readFileSync('./mp3/gaspi11.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Venezolano`)) {
-        const none = fs.readFileSync('./mp3/gaspi10.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi corte`)) {
-        const none = fs.readFileSync('./mp3/gaspi12.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi buenos dias`)) {
-        const none = fs.readFileSync('./mp3/gaspi13.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Enano`)) {
-        const none = fs.readFileSync('./mp3/gaspi14.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Buenas noches`)) {
-        const none = fs.readFileSync('./mp3/gaspi15.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-        if (budy.startsWith(`Peruano`)) {
-        const none = fs.readFileSync('./mp3/gaspi16.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Alto temazo`)) {
-        const none = fs.readFileSync('./mp3/sombare14.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`GOOOOD`)) {
-        const none = fs.readFileSync('./mp3/sombare13.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Ya me voy a dormir`)) {
-        const none = fs.readFileSync('./mp3/sombare12.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-        if (budy.startsWith(`Calefon`)) {
-        const none = fs.readFileSync('./mp3/sombare11.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Bot de mierda`)) {
-        const none = fs.readFileSync('./mp3/sombare10.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Apurate bot`)) {
-        const none = fs.readFileSync('./mp3/sombare9.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Un chino`)) {
-        const none = fs.readFileSync('./mp3/sombare7.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }				
-        if (budy.startsWith(`No funciona`)) {
-        const none = fs.readFileSync('./mp3/sombare8.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Boliviano`)) {
-        const none = fs.readFileSync('./mp3/gaspi3.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Corte`)) {
-        const none = fs.readFileSync('./mp3/gaspi2.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi me saludas`)) {
-        const none = fs.readFileSync('./mp3/gaspi4.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi y las minitas`)) {
-        const none = fs.readFileSync('./mp3/gaspi6.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi todo bien`)) {
-        const none = fs.readFileSync('./mp3/gaspi7.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Me quiero suicidar`)) {
-        const none = fs.readFileSync('./mp3/gaspi81.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Gaspi ya no aguanto`)) {
-        const none = fs.readFileSync('./mp3/gaspi9.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Contate algo bot`)) {
-        const none = fs.readFileSync('./mp3/gaspi5.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-               if (budy.startsWith(`Sexo`)) { 
-        const none = fs.readFileSync('./mp3/sexo.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Pongan cuties`)) { 
-        const none = fs.readFileSync('./mp3/neymar1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-                 if (budy.startsWith(`Momento epico`)) {
-        const none = fs.readFileSync('./mp3/sombare1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-		if (budy.startsWith(`El bot del orto no funciona`)) {
-        const none = fs.readFileSync('./mp3/sombare2.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-		if (budy.startsWith(`Epicardo`)) {
-        const none = fs.readFileSync('./mp3/sombare3.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-		if (budy.startsWith(`Insta de la minita`)) {
-        const none = fs.readFileSync('./mp3/sombare4.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-                 if (budy.startsWith(`Una mierda de bot`)) {
-        const none = fs.readFileSync('./mp3/sombare5.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-		 if (budy.startsWith(`Ultimo momento`)) {
-        const none = fs.readFileSync('./mp3/sombare6.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }			
-		if (budy.startsWith(`Nefasto`)) {
-        const none = fs.readFileSync('./mp3/gaspi1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (isGroup && isSimi && budy != undefined) {
+
+					if (budy.includes(`Todo bien`)) {
+						reply(`Si amigo todo bien, vite`)
+					}
+
+					if (budy.includes(`Bot`)) {
+						reply(`Dime mi amor`)
+					}
+
+					if (budy.includes(`Buenos dias`)) {
+						reply(`Buenos Dias trolos de mierda`)
+					}
+
+					if (budy.includes(`Bot gay`)) {
+						reply(`Miren a este boludito`)
+					}
+
+					if (budy.includes(`bot`)) {
+						reply(`Dime mi amor`)
+					}
+
+					if (budy.includes(`Gracias`)) {
+						reply(`De nada UwU`)
+					}
+
+					if (budy.includes(`Bien gracias y tu?`)) {
+						reply(`Opa yazmin te extrañe :(`)
+					}
+
+					if (budy.includes(`Opa`)) {
+						reply(`opaaaaa`)
+					}
+
+					if (budy.includes(`Fua`)) {
+						reply(`el diegote pa`)
+					}
+
+					if (budy.startsWith(`Hora del sexito`)) {
+						const none = fs.readFileSync('./mp3/maau1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Cuentate un chiste`)) {
+						const none = fs.readFileSync('./mp3/dylan2.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Admin party`)) {
+						const none = fs.readFileSync('./mp3/fiesta.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Fiesta del admin`)) {
+						const none = fs.readFileSync('./mp3/admin.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Viernes`)) {
+						const none = fs.readFileSync('./mp3/viernes.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`:v`)) {
+						const none = fs.readFileSync('./mp3/viejo1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`La toca 7w7`)) {
+						const none = fs.readFileSync('./anishan/anime5.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Quien es tu sempai botsito`)) {
+						const none = fs.readFileSync('./anishan/anime4.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Me gimes 7u7`)) {
+						const none = fs.readFileSync('./anishan/anime3.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Te amo botsito uwu`)) {
+						const none = fs.readFileSync('./anishan/anime2.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Onichan`)) {
+						const none = fs.readFileSync('./anishan/anime1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Pasen sexo`)) {
+						const none = fs.readFileSync('./mp3/fernan.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Paraguayo`)) {
+						const none = fs.readFileSync('./mp3/gaspi11.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Venezolano`)) {
+						const none = fs.readFileSync('./mp3/gaspi10.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi corte`)) {
+						const none = fs.readFileSync('./mp3/gaspi12.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi buenos dias`)) {
+						const none = fs.readFileSync('./mp3/gaspi13.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Enano`)) {
+						const none = fs.readFileSync('./mp3/gaspi14.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Buenas noches`)) {
+						const none = fs.readFileSync('./mp3/gaspi15.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Peruano`)) {
+						const none = fs.readFileSync('./mp3/gaspi16.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Alto temazo`)) {
+						const none = fs.readFileSync('./mp3/sombare14.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`GOOOOD`)) {
+						const none = fs.readFileSync('./mp3/sombare13.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Ya me voy a dormir`)) {
+						const none = fs.readFileSync('./mp3/sombare12.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Calefon`)) {
+						const none = fs.readFileSync('./mp3/sombare11.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Bot de mierda`)) {
+						const none = fs.readFileSync('./mp3/sombare10.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Apurate bot`)) {
+						const none = fs.readFileSync('./mp3/sombare9.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Un chino`)) {
+						const none = fs.readFileSync('./mp3/sombare7.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`No funciona`)) {
+						const none = fs.readFileSync('./mp3/sombare8.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Boliviano`)) {
+						const none = fs.readFileSync('./mp3/gaspi3.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Corte`)) {
+						const none = fs.readFileSync('./mp3/gaspi2.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi me saludas`)) {
+						const none = fs.readFileSync('./mp3/gaspi4.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi y las minitas`)) {
+						const none = fs.readFileSync('./mp3/gaspi6.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi todo bien`)) {
+						const none = fs.readFileSync('./mp3/gaspi7.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Me quiero suicidar`)) {
+						const none = fs.readFileSync('./mp3/gaspi81.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Gaspi ya no aguanto`)) {
+						const none = fs.readFileSync('./mp3/gaspi9.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Contate algo bot`)) {
+						const none = fs.readFileSync('./mp3/gaspi5.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Sexo`)) {
+						const none = fs.readFileSync('./mp3/sexo.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Pongan cuties`)) {
+						const none = fs.readFileSync('./mp3/neymar1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Momento epico`)) {
+						const none = fs.readFileSync('./mp3/sombare1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`El bot del orto no funciona`)) {
+						const none = fs.readFileSync('./mp3/sombare2.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Epicardo`)) {
+						const none = fs.readFileSync('./mp3/sombare3.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Insta de la minita`)) {
+						const none = fs.readFileSync('./mp3/sombare4.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Una mierda de bot`)) {
+						const none = fs.readFileSync('./mp3/sombare5.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Ultimo momento`)) {
+						const none = fs.readFileSync('./mp3/sombare6.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					}
+					if (budy.startsWith(`Nefasto`)) {
+						const none = fs.readFileSync('./mp3/gaspi1.mp3');
+						client.sendMessage(from, none, MessageType.audio, { quoted: mek, mimetype: 'audio/mp4', ptt: true })
+					              }
+					if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						console.log(color('[WARN]','red'), 'Unregistered Command from', color(sender.split('@')[0]))
+						console.log(color('[WARN]', 'red'), 'Unregistered Command from', color(sender.split('@')[0]))
 					}
-                           }
+			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
 		}
