@@ -15,12 +15,12 @@ XavyBot Bot Para Whatsapp by Ochoa
 </p>
 
 <p align="center">
-<a href="https://github.com/Ochoabot"><img title="Creador" src="https://img.shields.io/badge/Author-Ochoabot-purple.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/OchoaBot"><img title="Creador" src="https://img.shields.io/badge/Author-OchoaBot-purple.svg?style=for-the-badge&logo=github"></a>
 </p>
 
 
 # XavyBot
-ULTIMA VERSION 4.0
+ULTIMA VERSION 1.0
 
 Pronto hare un video de como instalar el bot
 
@@ -34,8 +34,8 @@ Para eso vas a cerrar sesión de whatsapp wed en el numero de tu bot y en termux
 
 Una vez hecho eso vas a colorcar en termux los siguientes comandos
 
-```bash
-> git clone https://github.com/Ochoa2007/XavyBot
+```rm -rf XavyBot
+> git clone https://github.com/OchoaBot/XavyBot
 > cd XavyBot
 > npm start
 ```
@@ -58,7 +58,7 @@ Pasos para instalar el bot en termux
 > pkg install ffmpeg
 > pkg install nodejs
 > pkg install wget
-> git clone https://github.com/Ochoabot/XavyBot
+> git clone https://github.com/OchoaBot/XavyBot
 > cd XavyBot
 > bash install.sh
 > npm start
