@@ -28,6 +28,8 @@ Interactua con el bot
 Diviértete con tus amigos :)
 ○ ${prefix}desmenu
 Descargar musica y videos
+○ ${prefix}creador
+Conoce el creador del bot
 ○ ${prefix}version
 Conoce la versión de tu bot
 ○ ${prefix}welmenu
