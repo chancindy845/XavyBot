@@ -38,10 +38,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ochoa2007/XavyBot.git"
+    "url": "git+https://github.com/OchoaBot/XavyBot.git"
   },
   "bugs": {
-    "url": "https://github.com/Ochoa2007/XavyBot.git"
+    "url": "https://github.com/OchoaBot/XavyBot.git"
   },
-  "homepage": "https://github.com/Ochoa2007/XavyBot#readme"
+  "homepage": "https://github.com/OchoaBot/XavyBot#readme"
 }
