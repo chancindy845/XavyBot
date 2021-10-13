@@ -4,6 +4,8 @@ const shantera = (prefix, pushname) => {
 
 Hora del sexito
 Pongan cuties
+Bot
+bot
 Fiesta del admin
 Admin party
 Viernes
