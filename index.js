@@ -258,10 +258,10 @@ async function starts() {
 			if (anu.action == 'add') {
 				num = anu.participants[0]
 				teks = `HOLAA!! @${num.split('@')[0]} ¿COMO ESTAS?😃\n\n『Bienvenido A *${mdata.subject}*』\n\nUn gusto conocerte amig@ 🤗\n\n_Recuerda leer las reglas del grupo para no tener ningun problema 🧐_\n\n*Solo disfrutar de este grupo y divertite 🥳*`
-                          const none = fs.readFileSync('./mp3/Bienvenido.mp3');
+                           client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
+				const none = fs.readFileSync('./mp3/Bienvenido.mp3');
 		                client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                                 }
-			  client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				teks = `Bueno, se fue @${num.split('@')[0]} 👋\n\nQue dios lo bendiga 😎`
