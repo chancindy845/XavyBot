@@ -1,5 +1,6 @@
-/*
-* XavyBot es una creación de Ochoa
+
+ /*
+* ShanBot es una creación de shanduy
 * ShanBot no tiene ningun fin de lucro
 * shanduy se reserva todos los derechos de autor
 * © 2021 shanduy, INC.
@@ -80,7 +81,7 @@ const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'END:VCARD'
 /******FIN DE ENTRADA VCARD******/
 
-prefix = '!'
+prefix = '*'
 blocked = []
 banChats = false
 
@@ -1918,5 +1919,5 @@ break
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
-
+}
 starts()
