@@ -1,11 +1,9 @@
- /*
+/*
 * XavyBot es una creación de Ochoa
-* XavyBot no tiene ningun fin de lucro
-* Ochoa se reserva todos los derechos de autor
-* © 2021 Ochoa, INC.
-
+* ShanBot no tiene ningun fin de lucro
+* shanduy se reserva todos los derechos de autor
+* © 2021 shanduy, INC.
 Cualquier copia que utilize mi ApiKey sera dado de baja
-
 - Que hay de nuevo?
 * Nada
 */
@@ -78,7 +76,7 @@ const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'VERSION:3.0\n' 
             + 'FN:Shan\n' // Nombre
             + 'ORG:Shanduy;\n' // Propietario
-            + 'TEL;type=CELL;type=VOICE;waid=573146224366:+57 314 622 4366\n' // ID de WhatsApp + número de teléfono
+            + 'TEL;type=CELL;type=VOICE;waid=593967689722:+593 96 768 9722\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
 /******FIN DE ENTRADA VCARD******/
 
@@ -95,7 +93,7 @@ const {
 
 /******INICIO DE FUNCIONES ENTRADA******/
 
-/******ARCHIVOS ANTILINK POR OCHOA******/
+/******ARCHIVOS ANTILINK POR SHANDUY******/
 
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
@@ -105,7 +103,7 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 const antiwa = JSON.parse(fs.readFileSync('./src/antiwa.json'))
 const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
-/******FIN DE ARCHIVOS ANTILINK POR OCHOA******/
+/******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
 
 //LEVEL INICIO
@@ -179,7 +177,7 @@ const getLevelingXp = (userId) => {
 //LEVEL FIN
 	
 function addMetadata(packname, author) {	
-	if (!packname) packname = 'XavyBot'; if (!author) author = 'Ochoa';	
+	if (!packname) packname = 'ShanBot'; if (!author) author = 'shanduy';	
 	author = author.replace(/[^a-zA-Z0-9]/g, '');	
 	let name = `${author}_${packname}`
 	if (fs.existsSync(`./${name}.exif`)) return `./${name}.exif`
@@ -237,7 +235,7 @@ async function starts() {
         client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color('Gracias, Ahora Escanea El QR!'))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color('Escanea el codigo QR rapido!!!'))
 	})
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
@@ -245,7 +243,7 @@ async function starts() {
 		start('2', 'Estas desconectado')
 	})
 	client.on('open', () => {
-		success('2', 'Conectado by Ochoa')
+		success('2', 'Conectado by shanduy')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -258,10 +256,7 @@ async function starts() {
 			if (anu.action == 'add') {
 				num = anu.participants[0]
 				teks = `HOLAA!! @${num.split('@')[0]} ¿COMO ESTAS?😃\n\n『Bienvenido A *${mdata.subject}*』\n\nUn gusto conocerte amig@ 🤗\n\n_Recuerda leer las reglas del grupo para no tener ningun problema 🧐_\n\n*Solo disfrutar de este grupo y divertite 🥳*`
-                           client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
-				const none = fs.readFileSync('./mp3/Bienvenido.mp3');
-		                client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                                }
+                          client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				teks = `Bueno, se fue @${num.split('@')[0]} 👋\n\nQue dios lo bendiga 😎`
@@ -1909,8 +1904,8 @@ break
 		if (budy.startsWith(`Nefasto`)) {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-		  
-        if (isGroup && isSimi && budy != undefined) {
+                  }
+	if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
@@ -1923,5 +1918,5 @@ break
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
-}
+
 starts()
