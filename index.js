@@ -1,7 +1,7 @@
- /*
+  /*
 * XavyBot es una creación de Ochoa
 * XavyBot no tiene ningun fin de lucro
-* Ochoa se reserva todos los derechos de autor
+* shanduy se reserva todos los derechos de autor
 * © 2021 Ochoa, INC.
 
 Cualquier copia que utilize mi ApiKey sera dado de baja
@@ -75,7 +75,7 @@ const { levelmenu } = require('./src/levelmenu')
 
 /******CARGA DE ENTRADA VCARD******/
 const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
-            + 'VERSION:1.0\n' 
+            + 'VERSION:3.0\n' 
             + 'FN:Xavy\n' // Nombre
             + 'ORG:Ochoa;\n' // Propietario
             + 'TEL;type=CELL;type=VOICE;waid=573146224366:+57 314 622 4366\n' // ID de WhatsApp + número de teléfono
@@ -95,7 +95,7 @@ const {
 
 /******INICIO DE FUNCIONES ENTRADA******/
 
-/******ARCHIVOS ANTILINK POR SHANDUY******/
+/******ARCHIVOS ANTILINK POR OCHOA******/
 
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
@@ -105,7 +105,7 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 const antiwa = JSON.parse(fs.readFileSync('./src/antiwa.json'))
 const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
-/******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
+/******FIN DE ARCHIVOS ANTILINK POR OCHOA******/
 
 
 //LEVEL INICIO
@@ -257,11 +257,11 @@ async function starts() {
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
-				teks = `Hola Miamor @${num.split('@')[0]} ¿Como Estas?\n\n『Bienvenido A Este Infierno *${mdata.subject}*』\n\nNo Me Da Gusto Conocerte :D\n\n_Recuerda Leer Las Reglas O Te Doy Ban En El Orto_\n\n*Solo Pasame Pack Y Bienvenido*`
+				teks = `Hola Mi Amor @${num.split('@')[0]} ¿Como Estas?\n\n『Bienvenido A Este Infierno Llamado *${mdata.subject}*』\n\nNo Me Da Gusto Conocerte\n\n_Recuerda Leer Las Reglas O Te Doy Ban En El Culo_\n\n*Disfruta Y Pasame Pack Si Eres Morra :D*`
                           client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
-				teks = `Bueno, se fue @${num.split('@')[0]} Bye Puta Nunca Te Necesitabamos xd`
+				teks = `Bueno, se fue @${num.split('@')[0]} 👋\n\nBye Puta`
 				client.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
@@ -311,7 +311,7 @@ async function starts() {
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
 					yt: 'Falló en el link o se produjo un error al momento de descargar el video',
-					unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 57xxxxxxxxx',
+					unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx',
 					Iv: 'Este no es un link de youtube'
 					},
 				only: {
@@ -329,7 +329,7 @@ async function starts() {
 					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
 					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play no funciona utiliza el comando !play2*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
 					musica2: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play2 no funciona utiliza el comando !play*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
-					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI DEATHNOTE\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Ochoa`,
+					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Ochoa`,
 				}
 			}
     			const apakah = ['Si','No']
@@ -394,7 +394,7 @@ if (budy.includes("https://wa.me/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 			
@@ -410,7 +410,7 @@ if (budy.includes("https://wa.me/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 			
@@ -432,7 +432,7 @@ if (budy.includes("https://www.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}			
 			
@@ -448,7 +448,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 			
@@ -469,7 +469,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 			
@@ -485,7 +485,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 
@@ -501,7 +501,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}		
 	
@@ -517,7 +517,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 	
@@ -533,7 +533,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 		setTimeout( () => {
 			client.updatePresence(from, Presence.composing)
-			reply("Bye Puta Ojala No Vuelvas")
+			reply("Adios Puta")
 		}, 0)
 	}
 
@@ -635,7 +635,7 @@ if (budy.includes("https://m.facebook.com/")){
 		case 'levelmenu':
 		client.sendMessage(from, levelmenu(prefix, sender), text, {quoted: mek})
 		break
-		case 'xavymenu':
+		case 'shanmenu':
 		client.sendMessage(from, toinmenu(prefix, sender), text, {quoted: mek})
 		break
 		case 'menuadmin':
@@ -708,7 +708,7 @@ break
 //FIN DE FUNCIONES BAN Y DESBAN					
 					
 					
-/******JUEGOS OCHOA LA PUTA MADRE NO TE OLVIDES******/
+/******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/
 					
 case 'gay':
 if (!isUser) return reply(mess.only.daftarB)
@@ -750,7 +750,7 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 											
-/******JUEGOS OCHOA LA PUTA MADRE NO TE OLVIDES******/					
+/******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/					
 					
 					
        				case 'wa.me':
@@ -768,9 +768,10 @@ break
 		
 	
 	case 'creador':
-	       client.sendMessage(from, {displayname: "Ochoa", vcard: vcard}, MessageType.contact, { quoted: mek})
-		client.sendMessage(from, 'Hola 👋 te saluda Xavy, este es un mensaje predeterminado.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo soy dueño de este bot y lo controlo, yo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot.\nBueno disfruten del bot.\n\n_*by Ochoa*_',MessageType.text, { quoted: mek} )
-	        client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
+		client.sendMessage(from, 'Hola 👋 te saluda Shan, este es un mensaje predeterminado al igual que el audio.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo no soy dueño de este bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot, si te dio pereza escuchar el audio gordito trolo.\nBueno disfruten del bot y si quieres me puedes seguir en instagram.\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://www.youtube.com/watch?v=2LQSzEbpJ-M\n\n_*by shanduy*_',MessageType.text, { quoted: mek} )
+                const none = fs.readFileSync('./mp3/shan.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
 	
 	
@@ -878,7 +879,7 @@ break
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 _*by shanduy*_ 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 _*by Ochoa*_ 」*\n\n${body.slice(4)}`)
 						}
 						reply('Transmisión exitosa')
 					}
@@ -1058,7 +1059,7 @@ break
 					break
 			        
 				
-				//FIN DE ANTILINK HECHO POR OCHOA
+				//FIN DE ANTILINK HECHO POR SHANDUY
 				
 //ADMINISTRACION DE GRUPOS
 		                
@@ -1082,7 +1083,7 @@ contextInfo: { mentionedJid: [from] }
 }
 client.sendMessage(from, options, text, { quoted: mek } )
 break
-                                        case 'alv':
+                                        case 'Alv':
                                         case 'kick':
 					case 'pafuera':
 					client.updatePresence(from, Presence.composing) 
@@ -1092,7 +1093,7 @@ break
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Marca al que vamos a funar')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Recibido Jefe. Bye Puta :\n'
+						teks = 'Pedido recibido, chao nefastooo 👋 :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 				        const none = fs.readFileSync('./mp3/baneado.mp3');
@@ -1118,13 +1119,13 @@ mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
 teks = ''
 for (let _ of mentioned) {
-teks += `Pedido recibido jefe✅\n\nQuitando Admin 3,2,1 Adios Admin :\n`
+teks += `Pedido recibido✅\n\nRetirando cargo como administrador :\n`
 teks += `@_.split('@')[0]`
 }
 mentions(teks, mentioned, true)
 client.groupDemoteAdmin(from, mentioned)
 } else {
-mentions(`Pedido recibido jefe✅\n\nQuitando Admin 3,2,1 Adios Admin @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
+mentions(`Pedido recibido✅\n\nRetirando cargo como administrador @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
 client.groupDemoteAdmin(from, mentioned)
 }
 break
@@ -1138,14 +1139,14 @@ if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A quien voy a dar admin??\n\n*Ejemplo:* ${prefix}promote @xxxxxxx')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 1) {
-teks = 'Pedido recibido jefe✅\n\nAgregando Admin 3,2,1 Hola Admin :D :\n'
+teks = 'Pedido recibido✅\n\nAgregando cargo como administrador :\n'
 for (let _ of mentioned) {
 teks += `@${_.split('@')[0]}\n`
 }
 mentions(teks, mentioned, true)
 client.groupMakeAdmin(from, mentioned)
 } else {
-mentions(`Pedido recibido jefe✅\n\nAgregando Admin 3,2,1 Hola Admin :D : @${mentioned[0].split('@')[0]}`, mentioned, true)
+mentions(`Pedido recibido✅\n\nAgregando cargo como administrador : @${mentioned[0].split('@')[0]}`, mentioned, true)
 client.groupMakeAdmin(from, mentioned)
 }
 break				
@@ -1332,7 +1333,7 @@ break
 					
 					case 'attp':
 						if (!isUser) return reply(mess.only.daftarB)
-					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp shanduy`)
+					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp Putos`)
 						reply(mess.only.attp)
 					        attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
 						client.sendMessage(from, attp2, MessageType.sticker, {quoted: mek})
@@ -1387,7 +1388,7 @@ break
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=hamilton50`)
                 if (anu.error) return reply(anu.error)
-                infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por shanduy*_`
+                infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por Ochoa*_`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -1429,13 +1430,13 @@ break
 
 case 'daftar':
 client.updatePresence(from, Presence.composing)
-if (isUser) return reply('Ya estas registrado 🧐')
+if (isUser) return reply('Ya estas registrado pendejo')
 if (args.length < 1) return reply(`Incorrecto ❎\nComando: ${prefix}daftar Nombre\n\nEjemplo: ${prefix}daftar Ochoa`)
 var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: GONORREA\`\`\`\n\n\`\`\`Hora COL: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários: ${user.length}\`\`\``, text, {quoted: mek})
+client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: GONORREA\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários: ${user.length}\`\`\``, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
@@ -1701,36 +1702,36 @@ break
 					})
 					break
                 default:
-               
-		if (budy.includes(`Bot`)) {
-                  reply(`Dime Mi Amor`)
-                  }
-					
-		if (budy.includes(`bot`)) {
-                  reply(`Dime Mi Amor`)
-                  }
-					
+                
 		if (budy.includes(`gracias`)) {
                   reply(`De Nada UwU`)
                   }
-		  
+					
+		if (budy.includes(`Bot`)) {
+                  reply(`Dime Mi Amor`)
+                  }			
+					
+		if (budy.includes(`bot`)) {
+                  reply(`Dime Mi Amor`)
+                  }			
+					
 		if (budy.includes(`Pito`)) {
-                  reply(`Tragas`)
-                  }
+                  reply(`Te Doy`)
+                  }			
 					
 		if (budy.includes(`pito`)) {
-                  reply(`Tragas`)
-                  }
+                  reply(`Te Doy`)
+                  }			
 					
 		if (budy.includes(`Contexto`)) {
-                  reply(`Te La Meto Sin Pretexto`)
-                  }
+                  reply(`Te La Doy Sin Pretexto`)
+                  }			
 					
 		if (budy.includes(`contexto`)) {
-                  reply(`Te Lo Meto Sin Pretexto`)
-                  }
+                  reply(`Te La Doy Sin Pretexto`)
+                  }			
 					
-                if (budy.includes(`Todo bien`)) {
+		if (budy.includes(`Todo bien`)) {
                   reply(`Si amigo todo bien, vite`)
                   }
 
@@ -1743,7 +1744,7 @@ break
                   }
 
 		if (budy.includes(`Gracias`)) {
-                  reply(`De Nada UwU`)
+                  reply(`De nada padre`)
                   }
 
 		if (budy.includes(`Bien gracias y tu?`)) {
