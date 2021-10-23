@@ -710,6 +710,17 @@ break
 					
 /******JUEGOS OCHOA LA PUTA MADRE NO TE OLVIDES******/
 					
+case 'tombo':
+if (!isUser) return reply(mess.only.daftarB)
+rate = body.slice(9)
+client.updatePresence(from, Presence.composing) 
+random = `${Math.floor(Math.random() * 100)}`
+Tombo = random
+if (Tombo < 0 ) {ga = 'Usted Me Llena De Orgullo :D'} else if (Tombo == 10 ) {ga = 'Orgulloso'} else if (Tombo == 20 ) {ga = 'Mas o menos 🤔'} else if (Tombo == 30 ) {ga = 'Mmm Nose Estas Raro'} else if (Tombo == 40 ) {ga = 'Señor Por Favor Alejese'} else if (Tombo == 50 ) {ga = 'Uribista :D'} else if (Tombo == 60 ) {ga = 'No Hpta Que Miedo'} else if (Tombo == 70 ) {ga = 'Señor? Que Paso?'} else if (Tombo == 80 ) {ga = 'Alejeseeeeeeeee Pero Yaaa'} else if (Tombo == 90 ) {ga = 'Esta Gonorreaaaaa Pa Fueraaa'} else if (Tombo == 100 ) {ga = 'Un Autentico Tombo Y Fan De Uribe'}
+hasil = `${rate}Usted es ${random}% tombo\n\n${ga}`
+reply(hasil)
+break
+
 case 'gay':
 if (!isUser) return reply(mess.only.daftarB)
 rate = body.slice(5)
