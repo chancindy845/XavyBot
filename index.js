@@ -1,8 +1,8 @@
   /*
-* XavyBot es una creación de Ochoa
-* XavyBot no tiene ningun fin de lucro
+* Dragonbot es una creación de Dragón
+* Dragonbot no tiene ningun fin de lucro
 * shanduy se reserva todos los derechos de autor
-* © 2021 Ochoa, INC.
+* © 2021 Dragón, INC.
 
 Cualquier copia que utilize mi ApiKey sera dado de baja
 
@@ -300,11 +300,11 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\n_*by Ochoa*_',
+				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\n_*by Dragon*_',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✅ ❭ *Level activado*',
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
-				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\n_*by Ochoa*_',
+				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\n_*by Dragon*_',
 				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\n_*by Ochoa*_',
                                 levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
@@ -320,16 +320,16 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa XavyBot',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador',
-                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by Ochoa*_',
-					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\n_*by Ochoa*_',
-					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\n_*by Ochoa*_',
-					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\n_*by Ochoa*_',
-					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
-                                        mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
+                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by Dragon*_',
+					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\n_*by Dragon*_',
+					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\n_*by Dragon*_',
+					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\n_*by Dragon*_',
+					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\n_*by Dragon*_',
+                                        mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by Dragon*_',
 					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\n_*by Ochoa*_',
 					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play no funciona utiliza el comando !play2*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
 					musica2: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando !play2 no funciona utiliza el comando !play*\n\nSi no envio tu musica checa que version tienes del bot con !version\n\n_*by Ochoa*_',
-					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Ochoa`,
+					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguiente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Ochoa`,
 				}
 			}
     			const apakah = ['Si','No']
@@ -780,7 +780,7 @@ break
 	
 	case 'creador':
 	       client.sendMessage(from, {displayname: "Ochoa", vcard: vcard}, MessageType.contact, { quoted: mek})
-		client.sendMessage(from, 'Hola 👋 te saluda Ochoa, este es un mensaje predeterminado.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo soy dueño de este bot y lo controlo, yo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot.\nBueno disfruten del bot.\n\n_*by Ochoa*_',MessageType.text, { quoted: mek} )
+		client.sendMessage(from, 'Hola 👋 te saluda Dragon, este es un mensaje predeterminado.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo soy dueño de este bot y lo controlo, yo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot.\nBueno disfruten del bot.\n\n_*by Ochoa*_',MessageType.text, { quoted: mek} )
                 client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
 	
@@ -860,7 +860,7 @@ break
 						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
-					mentions('╔══✪〘 *TODOS* 〙✪══\n╠➥'+teks+'╚═〘 _*by Ochoa*_ 〙', members_id, true)
+					mentions('╔══✪〘 *TODOS* 〙✪══\n╠➥'+teks+'╚═〘 _*by Dragon*_ 〙', members_id, true)
 					break
                                 case 'send':
 					var pc = body.slice(6)
@@ -919,7 +919,7 @@ break
 		
                                        
 				
-			//ANTILINKS DE REDES SOCIALES FLACO ACEPTALO SOLO LO ESTAS EDITANDO REALMENTE OCHOA TE HIZO TODO ESTO	
+			//ANTILINKS DE REDES SOCIALES FLACO ACEPTALO SOLO LO ESTAS EDITANDO REALMENTE Dragon TE HIZO TODO ESTO	
 				
 				case 'antiwa':
                                         if (!isGroup) return reply(mess.only.group)
@@ -1370,7 +1370,7 @@ break
 						fs.unlinkSync(media)
 						if (err) return reply('❌ No se pudo convertir el sticker en imágenes')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*⌈ Imagen convertida ✅ ⌉*\n\n_*by Ochoa*_'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*⌈ Imagen convertida ✅ ⌉*\n\n_*by Dragon*_'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -1445,7 +1445,7 @@ break
 case 'daftar':
 client.updatePresence(from, Presence.composing)
 if (isUser) return reply('Ya estas registrado pendejo')
-if (args.length < 1) return reply(`Incorrecto ❎\nComando: ${prefix}daftar Nombre\n\nEjemplo: ${prefix}daftar Ochoa`)
+if (args.length < 1) return reply(`Incorrecto ❎\nComando: ${prefix}daftar Nombre\n\nEjemplo: ${prefix}daftar Dragon`)
 var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
